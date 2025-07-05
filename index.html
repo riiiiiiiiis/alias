@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Алиас - классическая игра в объяснение слов для двух команд. Веселая семейная игра с таймером и звуковыми эффектами.">
+    <meta name="keywords" content="алиас, игра, слова, команды, семейная игра, объяснение слов">
+    <meta name="author" content="Сережа Рис">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Алиас - Игра для 2 команд">
+    <meta property="og:description" content="Классическая игра в объяснение слов для двух команд">
+    <meta property="og:type" content="website">
+    <title>Алиас - Игра для 2 команд</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Главное меню -->
+        <nav class="menu-screen" id="menuScreen">
+            <header>
+                <h1 class="menu-title">🎭 АЛИАС</h1>
+                <p class="menu-subtitle">Игра в объяснение слов для двух команд</p>
+            </header>
+            
+            <div class="menu-buttons">
+                <button class="menu-btn play" onclick="showSetup()">
+                    🚀 Новая игра
+                </button>
+                
+                <button class="menu-btn" onclick="showRules()">
+                    📖 Правила игры
+                </button>
+                
+                <button class="menu-btn secondary" onclick="showAbout()">
+                    ℹ️ О игре
+                </button>
+            </div>
+            
+            <footer class="version-info">v2.0 • by Сережа Рис</footer>
+        </nav>
+
+        <!-- Экран правил -->
+        <article class="rules-screen" id="rulesScreen">
+            <button class="btn back-btn" onclick="showMenu()">← Назад в меню</button>
+            
+            <header>
+                <h1 class="title">📖 Правила игры</h1>
+            </header>
+            
+            <section class="rules-content">
+                <h3>🎯 Цель игры</h3>
+                <p>Первая команда, набравшая установленное количество очков, побеждает!</p>
+                
+                <h3>👥 Состав команд</h3>
+                <p>Две команды по 2 человека в каждой. Игроки команд чередуются каждый раунд.</p>
+                
+                <h3>⏰ Ход игры</h3>
+                <ul>
+                    <li>Один игрок объясняет слова своей команде</li>
+                    <li>За угаданное слово команда получает 1 очко</li>
+                    <li>Можно пропускать сложные слова</li>
+                    <li>Время раунда ограничено (настраивается)</li>
+                </ul>
+                
+                <h3>🔥 Последнее слово</h3>
+                <p>В последние 10 секунд раунда включается режим "Последнее слово" - таймер останавливается, появляется новое слово, которое может угадать любая команда. Кто первый угадает - получает очко!</p>
+                
+                <h3>🚫 Запрещено</h3>
+                <ul>
+                    <li>Использовать само слово или его части</li>
+                    <li>Использовать созвучные слова</li>
+                    <li>Показывать жестами</li>
+                    <li>Использовать иностранные слова</li>
+                </ul>
+                
+                <h3>🏆 Победа</h3>
+                <p>Команда, первой набравшая установленное количество очков, становится победителем!</p>
+            </section>
+        </article>
+
+        <!-- Экран "О игре" -->
+        <article class="rules-screen" id="aboutScreen">
+            <button class="btn back-btn" onclick="showMenu()">← Назад в меню</button>
+            
+            <header>
+                <h1 class="title">ℹ️ О игре</h1>
+            </header>
+            
+            <section class="rules-content">
+                <h3>🎭 Алиас v2.0</h3>
+                <p>Классическая игра в объяснение слов для компании друзей и семьи!</p>
+                
+                <h3>🎮 Особенности игры</h3>
+                <ul>
+                    <li>Для 2 команд по 2 человека</li>
+                    <li>Режим "Последнее слово" для дополнительного азарта</li>
+                    <li>Звуковые эффекты через Tone.js</li>
+                    <li>Два словаря на выбор: стандартный и сложный</li>
+                    <li>Настраиваемое время раунда и количество очков для победы</li>
+                    <li>Случайные имена команд</li>
+                </ul>
+                
+                <h3>📚 Словари</h3>
+                <p><strong>Стандартный:</strong> простые и знакомые слова для всей семьи</p>
+                <p><strong>Сложный:</strong> абстрактные понятия и научные термины для опытных игроков</p>
+                
+                <h3>🔥 Режим "Последнее слово"</h3>
+                <p>В последние 10 секунд раунда время останавливается и появляется новое слово. Любая команда может его угадать и получить дополнительное очко!</p>
+                
+                <h3>👨‍💻 Разработка</h3>
+                <p><strong>Разработчик:</strong> Сережа Рис</p>
+                <p><strong>Telegram:</strong> @riiiiiiiis</p>
+                <p><strong>Технологии:</strong> HTML5, CSS3, JavaScript, Tone.js</p>
+                <p><strong>Помощь в разработке:</strong> Claude AI</p>
+                <p><strong>Версия:</strong> 2.0 • 2025</p>
+                
+                <h3>🎉 Приятной игры!</h3>
+                <p>Желаем вам весело провести время в кругу друзей и близких!</p>
+            </section>
+        </article>
+
+        <!-- Экран настройки -->
+        <section class="setup-screen" id="setupScreen">
+            <header>
+                <h1 class="title">🎭 АЛИАС</h1>
+            </header>
+            
+            <form class="team-setup" onsubmit="return false;">
+                <div class="team">
+                    <h3>🔴 Команда 1</h3>
+                    <input type="text" id="team1_player1" placeholder="Игрок 1" value="Анна" required>
+                    <input type="text" id="team1_player2" placeholder="Игрок 2" value="Борис" required>
+                </div>
+                
+                <div class="team team2">
+                    <h3>🔵 Команда 2</h3>
+                    <input type="text" id="team2_player1" placeholder="Игрок 1" value="Вера" required>
+                    <input type="text" id="team2_player2" placeholder="Игрок 2" value="Глеб" required>
+                </div>
+            </form>
+
+            <section class="settings">
+                <h3>⚙️ Настройки игры</h3>
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <label for="dictionary">Словарь:</label>
+                        <select id="dictionary">
+                            <option value="standard">Стандартный</option>
+                            <option value="advanced">Сложный</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label for="roundTime">Время раунда:</label>
+                        <select id="roundTime">
+                            <option value="30">30 секунд</option>
+                            <option value="60" selected>60 секунд</option>
+                            <option value="90">90 секунд</option>
+                            <option value="120">120 секунд</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label for="targetScore">Очки для победы:</label>
+                        <select id="targetScore">
+                            <option value="20">20 очков</option>
+                            <option value="30" selected>30 очков</option>
+                            <option value="50">50 очков</option>
+                            <option value="100">100 очков</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <button class="btn secondary" onclick="generateNewTeamNames()">🎲 Новые имена команд</button>
+                    </div>
+                </div>
+            </section>
+
+            <button class="btn" onclick="startGame()">🚀 Начать игру</button>
+        </section>
+
+        <!-- Экран игры -->
+        <main class="game-screen" id="gameScreen">
+            <header class="game-info">
+                <div class="current-team" id="currentTeam">Команда 1</div>
+                <div class="score">
+                    <span id="team1Score">0</span> : <span id="team2Score">0</span>
+                </div>
+            </header>
+
+            <section class="round-info" id="roundInfo">
+                Раунд 1 • Объясняет: <span id="currentPlayer">Игрок</span>
+            </section>
+
+            <div class="timer" id="timer" role="timer" aria-label="Таймер раунда">60</div>
+            
+            <section class="word-card" id="wordCard">
+                <div class="word" id="currentWord">Нажмите "Начать раунд"</div>
+            </section>
+
+            <nav class="game-controls">
+                <button class="btn" id="startRoundBtn" onclick="startRound()">▶️ Начать раунд</button>
+                <button class="btn success hidden" id="correctBtn" onclick="correctWord()">✅ Угадали</button>
+                <button class="btn secondary hidden" id="skipBtn" onclick="skipWord()">⏭️ Пропустить</button>
+                <button class="btn danger hidden" id="endRoundBtn" onclick="endRound()">⏹️ Закончить</button>
+                <button class="btn secondary" onclick="backToMenu()">🏠 Меню</button>
+            </nav>
+
+            <aside class="stats hidden" id="roundStats">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div>Угадано</div>
+                        <div id="roundCorrect">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div>Пропущено</div>
+                        <div id="roundSkipped">0</div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Экран результатов -->
+        <section class="results-screen" id="resultsScreen">
+            <header>
+                <h1 class="title">🎉 Игра окончена!</h1>
+                <div class="winner" id="winner">Команда 1 победила!</div>
+            </header>
+            
+            <div class="final-scores">
+                <div class="final-score">
+                    <h3>🔴 Команда 1</h3>
+                    <div class="score" id="finalScore1">0</div>
+                </div>
+                <div class="final-score">
+                    <h3>🔵 Команда 2</h3>
+                    <div class="score" id="finalScore2">0</div>
+                </div>
+            </div>
+
+            <nav>
+                <button class="btn success" onclick="newGame()">🎮 Новая игра</button>
+                <button class="btn secondary" onclick="backToSetup()">⚙️ Настройки</button>
+            </nav>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
