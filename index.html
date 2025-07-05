@@ -245,7 +245,37 @@
         </section>
     </div>
 
+    <script>
+        // Полностью отключаем все виды логирования перед загрузкой Tone.js
+        const originalConsole = {
+            log: console.log,
+            warn: console.warn,
+            info: console.info,
+            error: console.error,
+            debug: console.debug,
+            trace: console.trace
+        };
+        
+        // Отключаем ВСЕ методы консоли
+        console.log = () => {};
+        console.warn = () => {};
+        console.info = () => {};
+        console.error = () => {};
+        console.debug = () => {};
+        console.trace = () => {};
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script>
+        // Возвращаем консоль обратно после загрузки Tone.js
+        setTimeout(() => {
+            console.log = originalConsole.log;
+            console.warn = originalConsole.warn;
+            console.info = originalConsole.info;
+            console.error = originalConsole.error;
+            console.debug = originalConsole.debug;
+            console.trace = originalConsole.trace;
+        }, 100);
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
