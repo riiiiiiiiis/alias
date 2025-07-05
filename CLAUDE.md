@@ -107,4 +107,4 @@ Player names are saved in session memory (`savedNames` object) and restored betw
 - CSS uses gradients and animations extensively
 - No external dependencies except Tone.js CDN
 - Vanilla JavaScript with no frameworks
-- Inline event handlers in HTML (onclick attributes)
+- Inline event handlers in HTML (onclick attributes)# Test commit
